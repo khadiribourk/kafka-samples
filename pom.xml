@@ -6,27 +6,29 @@
 
     <groupId>com.github.kibourk</groupId>
     <artifactId>kafka-samples</artifactId>
+    <packaging>pom</packaging>
     <version>1.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <modules>
+        <module>kafka-twitter-producer</module>
+        <module>kafka-elasticsearch-consumer</module>
+        <module>kafka-simple-demo</module>
+    </modules>
 
     <properties>
         <mvn.repository>C:\IRB\M2Repositry</mvn.repository>
     </properties>
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-clients</artifactId>
-            <version>2.2.0</version>
-        </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.25</version>
-          <!--  <scope>test</scope>-->
-        </dependency>
-
-    </dependencies>
 
 </project>
