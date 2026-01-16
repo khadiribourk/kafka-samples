@@ -36,14 +36,6 @@ public class ElasticSearchConsumer {
 
     public static void main(String[] args) throws IOException {
         RestHighLevelClient client = createClient();
-
-        /*String jsonString = "{\"foo\":\"bar\"}";
-        IndexRequest indexRequest = new IndexRequest(
-                "twitter", "tweets").source(jsonString, XContentType.JSON);
-
-        IndexResponse indexResponse = client.index(indexRequest, RequestOptions.DEFAULT);
-        String id = indexResponse.getId();
-        logger.info(id);*/
         String isManualCommitOfOffsets="false";
         KafkaConsumer<String, String> consumer =createConsumer("twitter_tweets",isManualCommitOfOffsets);
         //poll for the new data
